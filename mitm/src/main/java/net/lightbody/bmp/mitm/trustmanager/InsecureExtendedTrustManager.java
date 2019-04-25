@@ -65,6 +65,7 @@ public class InsecureExtendedTrustManager extends X509ExtendedTrustManager {
 
     @Override
     public void checkClientTrusted(X509Certificate[] x509Certificates, String s, Socket socket) throws CertificateException {
+        System.out.println("111");
         try {
             DEFAULT_EXTENDED_TRUST_MANAGER.checkClientTrusted(x509Certificates, s, socket);
         } catch (CertificateException e) {
@@ -74,6 +75,7 @@ public class InsecureExtendedTrustManager extends X509ExtendedTrustManager {
 
     @Override
     public void checkServerTrusted(X509Certificate[] x509Certificates, String s, Socket socket) throws CertificateException {
+        System.out.println("222");
         try {
             DEFAULT_EXTENDED_TRUST_MANAGER.checkServerTrusted(x509Certificates, s, socket);
         } catch (CertificateException e) {
@@ -83,6 +85,7 @@ public class InsecureExtendedTrustManager extends X509ExtendedTrustManager {
 
     @Override
     public void checkClientTrusted(X509Certificate[] x509Certificates, String s, SSLEngine sslEngine) throws CertificateException {
+        System.out.println("333");
         try {
             DEFAULT_EXTENDED_TRUST_MANAGER.checkClientTrusted(x509Certificates, s, sslEngine);
         } catch (CertificateException e) {
@@ -92,6 +95,7 @@ public class InsecureExtendedTrustManager extends X509ExtendedTrustManager {
 
     @Override
     public void checkServerTrusted(X509Certificate[] x509Certificates, String s, SSLEngine sslEngine) throws CertificateException {
+        System.out.println("444");
         try {
             DEFAULT_EXTENDED_TRUST_MANAGER.checkServerTrusted(x509Certificates, s, sslEngine);
         } catch (CertificateException e) {
@@ -101,6 +105,7 @@ public class InsecureExtendedTrustManager extends X509ExtendedTrustManager {
 
     @Override
     public void checkClientTrusted(X509Certificate[] x509Certificates, String s) throws CertificateException {
+        System.out.println("555");
         try {
             DEFAULT_EXTENDED_TRUST_MANAGER.checkClientTrusted(x509Certificates, s);
         } catch (CertificateException e) {
@@ -110,6 +115,7 @@ public class InsecureExtendedTrustManager extends X509ExtendedTrustManager {
 
     @Override
     public void checkServerTrusted(X509Certificate[] x509Certificates, String s) throws CertificateException {
+        System.out.println("666");
         try {
             DEFAULT_EXTENDED_TRUST_MANAGER.checkServerTrusted(x509Certificates, s);
         } catch (CertificateException e) {
