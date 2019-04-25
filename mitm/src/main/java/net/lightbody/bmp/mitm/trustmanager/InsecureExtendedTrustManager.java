@@ -60,7 +60,8 @@ public class InsecureExtendedTrustManager extends X509ExtendedTrustManager {
     /**
      * The default extended trust manager, which will be used to determine if certificates would otherwise be trusted.
      */
-    protected static final X509ExtendedTrustManager DEFAULT_EXTENDED_TRUST_MANAGER = getDefaultExtendedTrustManager();
+//    protected static final X509ExtendedTrustManager DEFAULT_EXTENDED_TRUST_MANAGER = getDefaultExtendedTrustManager();
+    protected static final X509ExtendedTrustManager DEFAULT_EXTENDED_TRUST_MANAGER = NOOP_EXTENDED_TRUST_MANAGER;
 
     @Override
     public void checkClientTrusted(X509Certificate[] x509Certificates, String s, Socket socket) throws CertificateException {
