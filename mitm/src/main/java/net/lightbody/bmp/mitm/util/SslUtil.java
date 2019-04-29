@@ -89,7 +89,7 @@ public class SslUtil {
             sslContextBuilder.trustManager(trustSource.getTrustedCAs());
         }
 
-        sslContextBuilder.ciphers(cipherSuites, SupportedCipherSuiteFilter.INSTANCE);
+//        sslContextBuilder.ciphers(cipherSuites, SupportedCipherSuiteFilter.INSTANCE);
 
         try {
             return sslContextBuilder.build();
