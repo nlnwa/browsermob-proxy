@@ -3,6 +3,7 @@ package net.lightbody.bmp.mitm.util;
 import com.google.common.base.Supplier;
 import com.google.common.base.Suppliers;
 import com.google.common.io.CharStreams;
+import io.netty.handler.ssl.ClientAuth;
 import io.netty.handler.ssl.OpenSsl;
 import io.netty.handler.ssl.SslContext;
 import io.netty.handler.ssl.SslContextBuilder;
@@ -79,7 +80,7 @@ public class SslUtil {
      * @return an SSLContext to connect to upstream servers with
      */
     public static SslContext getUpstreamServerSslContext(Collection<String> cipherSuites, TrustSource trustSource) {
-        SslContextBuilder sslContextBuilder = SslContextBuilder.forClient();//.protocols("TLSv1.3");
+        SslContextBuilder sslContextBuilder = SslContextBuilder.forClient().protocols("TLSv1.3").clientAuth(ClientAuth.NONE);
 
         if (trustSource == null) {
             log.warn("Disabling upstream server certificate verification. This will allow attackers to intercept communications with upstream servers.");
