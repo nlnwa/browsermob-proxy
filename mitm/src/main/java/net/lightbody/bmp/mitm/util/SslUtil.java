@@ -79,7 +79,7 @@ public class SslUtil {
      * @return an SSLContext to connect to upstream servers with
      */
     public static SslContext getUpstreamServerSslContext(Collection<String> cipherSuites, TrustSource trustSource) {
-        SslContextBuilder sslContextBuilder = SslContextBuilder.forClient().protocols("TLSv1.3");
+        SslContextBuilder sslContextBuilder = SslContextBuilder.forClient();//.protocols("TLSv1.3");
 
         if (trustSource == null) {
             log.warn("Disabling upstream server certificate verification. This will allow attackers to intercept communications with upstream servers.");
